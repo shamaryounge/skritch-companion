@@ -1,26 +1,52 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/skritch/Header";
+import { Hero } from "@/components/skritch/Hero";
+import { Problem } from "@/components/skritch/Problem";
+import { HowItWorks } from "@/components/skritch/HowItWorks";
+import { Features } from "@/components/skritch/Features";
+import { Community } from "@/components/skritch/Community";
+import { Roadmap } from "@/components/skritch/Roadmap";
+import { Partners } from "@/components/skritch/Partners";
+import { Signup } from "@/components/skritch/Signup";
+import { Footer } from "@/components/skritch/Footer";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Skritch™ — Robotic pet comfort for dogs at home" },
+      {
+        name: "description",
+        content:
+          "Skritch™ is a robotic pet comfort system that gives dogs gentle human-like scratches with safety sensors, voice praise, and app-connected video calling.",
+      },
+      { property: "og:title", content: "Skritch™ — Robotic pet comfort for dogs at home" },
+      {
+        property: "og:description",
+        content:
+          "A soft robotic hand, smart safety sensors, and an app-connected experience designed for safer remote pet comfort.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: SkritchLanding,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function SkritchLanding() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <Header />
+      <main>
+        <Hero />
+        <Problem />
+        <HowItWorks />
+        <Features />
+        <Community />
+        <Roadmap />
+        <Partners />
+        <Signup />
+      </main>
+      <Footer />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
