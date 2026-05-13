@@ -1,0 +1,53 @@
+import { PawPrint } from "lucide-react";
+
+const links = [
+  { label: "Waitlist", href: "#waitlist" },
+  { label: "Shelter Partnerships", href: "#shelters" },
+  { label: "Investor Inquiries", href: "#partners" },
+  { label: "Product Roadmap", href: "#roadmap" },
+  { label: "Contact", href: "#waitlist" },
+];
+
+export function Footer() {
+  return (
+    <footer className="border-t border-border/70 bg-secondary/40">
+      <div className="mx-auto w-full max-w-7xl px-5 py-14 md:px-8">
+        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-md">
+            <div className="flex items-center gap-2.5">
+              <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 ring-1 ring-inset ring-border">
+                <PawPrint className="h-4.5 w-4.5 text-primary" strokeWidth={2.2} />
+              </span>
+              <span className="text-[17px] font-semibold tracking-tight">
+                Skritch<sup className="ml-0.5 text-[9px] text-muted-foreground">™</sup>
+              </span>
+            </div>
+            <p className="mt-4 text-[14px] leading-relaxed text-muted-foreground">
+              Robotic pet comfort, designed for safer remote connection.
+            </p>
+          </div>
+
+          <nav className="grid grid-cols-2 gap-x-10 gap-y-2 md:grid-cols-3">
+            {links.map((l) => (
+              <a
+                key={l.label}
+                href={l.href}
+                className="text-[13.5px] font-medium text-foreground/80 transition-colors hover:text-foreground"
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border/70 pt-6 text-[12px] text-muted-foreground md:flex-row md:items-center">
+          <p className="max-w-2xl leading-relaxed">
+            Skritch™ is in development. Features, designs, availability, and final specifications may change before
+            launch.
+          </p>
+          <p>© {new Date().getFullYear()} Skritch™. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
