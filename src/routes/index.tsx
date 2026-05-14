@@ -11,24 +11,6 @@ import { Signup } from "@/components/skritch/Signup";
 import { Footer } from "@/components/skritch/Footer";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Skritch™ — Robotic pet comfort for dogs at home" },
-      {
-        name: "description",
-        content:
-          "Skritch™ is a robotic pet comfort system that gives dogs gentle human-like scratches with safety sensors, voice praise, and app-connected video calling.",
-      },
-      { property: "og:title", content: "Skritch™ — Robotic pet comfort for dogs at home" },
-      {
-        property: "og:description",
-        content:
-          "A soft robotic hand, smart safety sensors, and an app-connected experience designed for safer remote pet comfort.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
   component: SkritchLanding,
 });
 
