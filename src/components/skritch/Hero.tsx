@@ -17,6 +17,9 @@ export function Hero() {
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             Now accepting waitlist
           </div>
+          <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground/60">
+            All images are AI generated depictions. Product is in early development.
+          </p>
           <h1 className="mt-5 text-balance text-[40px] font-semibold leading-[1.05] tracking-tight md:text-[56px] lg:text-[64px]">
             Give your dog real scratches, even when you're not home.
           </h1>
