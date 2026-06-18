@@ -57,14 +57,27 @@ const cards: Card[] = [
 
 function SignupCard({ card }: { card: Card }) {
   const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form) as unknown as Record<string, string>).toString(),
+    })
+      .then(() => setSubmitted(true))
+      .catch(() => setSubmitted(true));
+  }
+
   return (
     <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        setSubmitted(true);
-      }}
+      name={card.id}
+      data-netlify="true"
+      onSubmit={handleSubmit}
       className="flex h-full flex-col rounded-3xl border border-border/70 bg-card p-7 shadow-soft transition-shadow hover:shadow-card"
     >
+      <input type="hidden" name="form-name" value={card.id} />
       <h3 className="text-[19px] font-semibold tracking-tight">{card.title}</h3>
       <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">{card.body}</p>
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8" /><title>Netlify form registration</title></head>
+<body>
+  <!-- Pet Owner Waitlist -->
+  <form name="owner" data-netlify="true" hidden>
+    <input type="hidden" name="form-name" value="owner" />
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="dogSize" />
+    <input type="text" name="city" />
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Shelter or Clinic Partner -->
+  <form name="partner" data-netlify="true" hidden>
+    <input type="hidden" name="form-name" value="partner" />
+    <input type="text" name="org" />
+    <input type="text" name="contact" />
+    <input type="email" name="email" />
+    <input type="text" name="orgType" />
+    <input type="text" name="location" />
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Investor or Vendor Inquiry -->
+  <form name="investor" data-netlify="true" hidden>
+    <input type="hidden" name="form-name" value="investor" />
+    <input type="text" name="name" />
+    <input type="text" name="company" />
+    <input type="email" name="email" />
+    <input type="text" name="inquiryType" />
+    <textarea name="message"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
